@@ -10,7 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-// Empty array for pushing new team members to
+// Empty array for pushing new team member objects to
 const teamMember = [];
 
 // Array of questions to prompt the user
@@ -163,6 +163,7 @@ const writeToFile = async () => {
       ? console.error("error creating folder", err)
       : console.log("New folder created: output");
   });
+  // Write file to newly created folder
   fs.writeFile(outputPath, render(teamMember), (err) => {
     err
       ? console.error(err)
@@ -175,4 +176,5 @@ const init = async () => {
   await createManager();
   await addNewEmployee();
 };
+// Run program
 init();
