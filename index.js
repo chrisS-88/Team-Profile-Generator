@@ -157,12 +157,11 @@ const createIntern = async () => {
 
 // function to write HTML file
 const writeToFile = async () => {
-  // Create the new folder
-  fs.mkdir(OUTPUT_DIR, (err) => {
-    err
-      ? console.error("error creating folder", err)
-      : console.log("New folder created: output");
-  });
+  // Create the new folder if it does not exsist already
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+    console.log("New folder created: output");
+  }
   // Write file to newly created folder
   fs.writeFile(outputPath, render(teamMember), (err) => {
     err

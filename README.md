@@ -27,7 +27,7 @@ A simple command-line application that generates profiles for your work team. It
 
 ## Screenshots
 
-<img src="assets/screenshot.png" width = 650px>
+<img src="assets/screenshot_1.png" width = 650px>
 
 ## Installation
 
